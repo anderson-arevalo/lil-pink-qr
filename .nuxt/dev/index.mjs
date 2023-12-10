@@ -893,7 +893,7 @@ const auth = defineEventHandler(async (event) => {
     });
     return { data };
   } catch (error) {
-    return { error: error.data };
+    return { data: error.data };
   }
 });
 

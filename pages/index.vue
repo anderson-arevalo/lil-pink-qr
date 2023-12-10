@@ -4,16 +4,19 @@ const token = ref('');
 
 async function login() { 
 
-  const { data: response, pending, refresh, execute, error} = await useAsyncData('login', () => {
+  const { data: response } = await useAsyncData('login', () => {
       try {
         return $fetch(`/api/auth?document=${document.value}&token=${token.value}`);
       } catch (error) {
         console.log('error');
       }
     });
+    
+    if(toRaw(response.value.data.status === false)){
+      console.log('error')
+    }
 
     if(toRaw(response.value.data.status)){    
-
       localStorage.setItem("user_name", response.value.data.user_name);
       localStorage.setItem("user_last_name", response.value.data.user_last_name);
       localStorage.setItem("user_io", response.value.data.user_io);

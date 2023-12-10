@@ -21,7 +21,7 @@ export default defineEventHandler(async (event) => {
     
     } catch (error) {
         // Handle the error here
-        return { error:  error.data}
+        return { data: error.data }
     }
   
   });
