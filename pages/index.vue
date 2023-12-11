@@ -4,7 +4,7 @@ const token = ref('');
 
 async function login() { 
 
-  const { data: response } = await useAsyncData('login', () => {
+  const { data: response, error } = await useAsyncData('login', () => {
       try {
         return $fetch(`/api/auth?document=${document.value}&token=${token.value}`);
       } catch (error) {
@@ -12,6 +12,8 @@ async function login() {
       }
     });
     
+    // console.log(response.value);
+
     if(toRaw(response.value.data.status === false)){
       console.log('error')
     }
@@ -23,6 +25,7 @@ async function login() {
       localStorage.setItem("token", response.value.data.token);
       localStorage.setItem("status", response.value.data.status);
       localStorage.setItem("session_io", response.value.data.session_io);
+      await navigateTo('/user')
     }
 }
 
@@ -30,7 +33,7 @@ async function login() {
 
 <template>
   Inicio de sesion
-  <div class="flex gap-4">
+  <div class="flex flex-col gap-4">
     <input type="text" v-model="document" class="rounded border-dashed text-pink-500" />
     <input type="password" v-model=token class="rounded  border-dashed text-pink-500" />
     <button
