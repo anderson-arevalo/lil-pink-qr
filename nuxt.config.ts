@@ -19,7 +19,8 @@ export default defineNuxtConfig({
   modules: [ 
     ['@nuxtjs/google-fonts', {
       families: {
-        Lato: true
+        Montserrat: [100, 300, 400, 500, 700, 900],
+        Roboto: true,
       }
     }],'@pinia/nuxt'
   ],

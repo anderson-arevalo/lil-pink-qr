@@ -9,7 +9,10 @@ module.exports = {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'montserrat': ['Montserrat'],
+      'roboto': ['Roboto'],
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

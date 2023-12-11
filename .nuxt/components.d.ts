@@ -2,8 +2,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'HeaderPrincipal': typeof import("../components/Header/Principal.vue")['default']
-    'LoginFormTheButton': typeof import("../components/LoginForm/TheButton.vue")['default']
-    'LoginFormTheInput': typeof import("../components/LoginForm/TheInput.vue")['default']
+    'LoginFormTheImageBussiness': typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -25,8 +24,7 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyHeaderPrincipal': typeof import("../components/Header/Principal.vue")['default']
-    'LazyLoginFormTheButton': typeof import("../components/LoginForm/TheButton.vue")['default']
-    'LazyLoginFormTheInput': typeof import("../components/LoginForm/TheInput.vue")['default']
+    'LazyLoginFormTheImageBussiness': typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'LazyNuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -51,8 +49,7 @@ declare module 'vue' {
 }
 
 export const HeaderPrincipal: typeof import("../components/Header/Principal.vue")['default']
-export const LoginFormTheButton: typeof import("../components/LoginForm/TheButton.vue")['default']
-export const LoginFormTheInput: typeof import("../components/LoginForm/TheInput.vue")['default']
+export const LoginFormTheImageBussiness: typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -74,8 +71,7 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyHeaderPrincipal: typeof import("../components/Header/Principal.vue")['default']
-export const LazyLoginFormTheButton: typeof import("../components/LoginForm/TheButton.vue")['default']
-export const LazyLoginFormTheInput: typeof import("../components/LoginForm/TheInput.vue")['default']
+export const LazyLoginFormTheImageBussiness: typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const LazyNuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']

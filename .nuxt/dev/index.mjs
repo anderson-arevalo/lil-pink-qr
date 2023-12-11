@@ -686,12 +686,12 @@ const _OHXPzK = defineEventHandler(async (event) => {
   }
 });
 
-const _lazy_ZzrutT = () => Promise.resolve().then(function () { return auth$1; });
+const _lazy_UssDQs = () => Promise.resolve().then(function () { return auth_post$1; });
 const _lazy_KktUDP = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: _OHXPzK, lazy: false, middleware: true, method: undefined },
-  { route: '/api/auth', handler: _lazy_ZzrutT, lazy: true, middleware: false, method: undefined },
+  { route: '/api/auth', handler: _lazy_UssDQs, lazy: true, middleware: false, method: "post" },
   { route: '/__nuxt_error', handler: _lazy_KktUDP, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_KktUDP, lazy: true, middleware: false, method: undefined }
 ];
@@ -877,7 +877,7 @@ const errorDev = /*#__PURE__*/Object.freeze({
   template: template$1
 });
 
-const auth = defineEventHandler(async (event) => {
+const auth_post = defineEventHandler(async (event) => {
   const bearer = event.context.adminBearer;
   const query = getQuery$1(event);
   try {
@@ -897,9 +897,9 @@ const auth = defineEventHandler(async (event) => {
   }
 });
 
-const auth$1 = /*#__PURE__*/Object.freeze({
+const auth_post$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  default: auth
+  default: auth_post
 });
 
 const Vue3 = version.startsWith("3");

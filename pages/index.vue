@@ -6,7 +6,10 @@ async function login() {
 
   const { data: response, error } = await useAsyncData('login', () => {
       try {
-        return $fetch(`/api/auth?document=${document.value}&token=${token.value}`);
+        return $fetch(`/api/auth?document=${document.value}&token=${token.value}`,
+        {
+         method: 'POST'
+        });
       } catch (error) {
         console.log('error');
       }
@@ -32,16 +35,39 @@ async function login() {
 </script>
 
 <template>
-  Inicio de sesion
-  <div class="flex flex-col gap-4">
-    <input type="text" v-model="document" class="rounded border-dashed text-pink-500" />
-    <input type="password" v-model=token class="rounded  border-dashed text-pink-500" />
-    <button
-        @click="login()"
-        class="inline-block border-2 border-slate-900 border-dashed rounded-lg bg-white hover:bg-slate-100 border px-5 py-3 text-center text-sm font-semibold text-slate-900 sm:w-auto"
-        href=""
-      >
-        Ingresar
-      </button>
+  <div class=" flex flex-col md:flex-row px-4 mx-auto w-screen h-screen max-w-7xl sm:px-6 items-center font-montserrat">
+
+    <div class="flex flex-col sm:w-1/2 lg:w-2/3 rounded-lg sm:h-96 items-start justify-center">
+      <div class="flex flex-col gap-2">
+        <blockquote class="text-2xl sm:text-4xl font-semibold italic text-slate-900 py-2 ">
+            <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-[#E01783] relative inline-block">
+              <span class="relative text-white">Ama, vive, rie de corazon</span>
+            </span>
+          </blockquote>
+        <h1 class="max-w-[50rem] text-4xl font-bold tracking-tight text-black  md:text-6xl lg:text-7xl">Redime tu bono de navidad.</h1>
+        <p class="max-w-lg text-xl text-slate-700">¡Aprovecha tu regalo y disfruta de tus compras!</p>  
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:w-1/2 lg:w-1/3  gap-6 border py-12 px-8  border-grey-50 rounded-lg">
+      <div class="flex flex-col gap-4">
+        <LoginFormTheImageBussiness />
+        <div class="flex flex-col gap-2">
+          <p class="text-xl text-black font-bold" >Bienvenido!</p>
+          <p class="text-sm text-gray-500 font-normal">Para iniciar sesión, solo necesitas tu cedula y contraseña.</p>
+        </div>
+      </div> 
+    <div class="flex flex-col gap-4">
+        <input type="text" v-model="document" class="border border-gray-500 rounded-lg text-pink-500" />
+        <input type="password" v-model=token class="border border-gray-500  rounded-lg text-pink-500" />
+        <button
+            @click="login()"
+            class="inline-block rounded-lg bg-[#E01783] px-5 py-2 text-center text-sm font-semibold text-white sm:w-auto"
+            href=""
+          >
+            Ingresar
+          </button>
+    </div>
+  </div>
   </div>
 </template>
