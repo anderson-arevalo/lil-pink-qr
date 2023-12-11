@@ -3,7 +3,7 @@
 
   <NuxtLoadingIndicator />
 
-  <div class=" flex pb-2 px-4 md:px-32 justify-center">
+  <div class=" flex pb-2 md:px-32 justify-center">
     <slot />
   </div>
 
