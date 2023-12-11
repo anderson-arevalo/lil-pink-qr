@@ -1,5 +1,10 @@
 <script setup >
 
+import { useUserStore } from '@/stores/user'
+
+// access the `store` variable anywhere in the component ✨
+const store = useUserStore()
+
 definePageMeta({
   layout: 'user'
 })
@@ -7,11 +12,11 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="flex flex-col justify-start items-center text-center gap-6 sm:gap-4 sm:pb-28 w-screen md:w-1/2 lg:w-1/3 h-screen ">
+  <div class="flex flex-col justify-start items-center text-center gap-4 sm:gap-4 sm:pb-28 w-screen md:w-1/2 lg:w-1/3 h-screen ">
     <UserQrTheImageBanner/>
-      <div class="flex flex-col items-center gap-2">
-        <p class=" text-black font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl" >Carmen Eliana</p>
-        <p class=" text-gray-500 font-normal  text-xl md:text-2xl lg:text-3xl">Saldo: $20,000 COP</p>
+      <div class="flex flex-col items-center gap-1 sm:gap-2">
+        <p class=" text-black font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl" >{{store.userData.user_name}}</p>
+        <p class=" text-gray-500 font-normal  text-xl md:text-2xl lg:text-3xl">Saldo: ${{store.userData.balance}} COP</p>
         <LoginFormTheImageBussiness />
       </div>
       <UserQrTheImageQr />
