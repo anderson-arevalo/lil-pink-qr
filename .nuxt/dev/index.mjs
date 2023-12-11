@@ -672,26 +672,27 @@ const errorHandler = (async function errorhandler(error, event) {
 });
 
 const _OHXPzK = defineEventHandler(async (event) => {
-  try {
-    const data = await $fetch("https://app.credipink.com/api/v1/login", {
-      method: "POST",
-      body: {
-        email: "analista.sistemas@lilipink.com",
-        password: "1023911054"
-      }
-    });
-    event.context.adminBearer = data.access_token;
-  } catch (error) {
-    event.context.adminBearer = error;
-  }
+  await $fetch("https://app.credipink.com/api/v1/login", {
+    method: "POST",
+    body: {
+      email: "analista.sistemas@lilipink.com",
+      password: "1023911054"
+    }
+  }).then((response) => {
+    if (response) {
+      event.context.adminBearer = response.access_token;
+    }
+  }).catch((err) => {
+    event.context.adminBearer = err;
+  });
 });
 
-const _lazy_UssDQs = () => Promise.resolve().then(function () { return auth_post$1; });
+const _lazy_ZzrutT = () => Promise.resolve().then(function () { return auth$1; });
 const _lazy_KktUDP = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
   { route: '', handler: _OHXPzK, lazy: false, middleware: true, method: undefined },
-  { route: '/api/auth', handler: _lazy_UssDQs, lazy: true, middleware: false, method: "post" },
+  { route: '/api/auth', handler: _lazy_ZzrutT, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_KktUDP, lazy: true, middleware: false, method: undefined },
   { route: '/**', handler: _lazy_KktUDP, lazy: true, middleware: false, method: undefined }
 ];
@@ -877,29 +878,30 @@ const errorDev = /*#__PURE__*/Object.freeze({
   template: template$1
 });
 
-const auth_post = defineEventHandler(async (event) => {
-  const bearer = event.context.adminBearer;
+const auth = defineEventHandler(async (event) => {
+  let bearer = event.context.adminBearer;
   const query = getQuery$1(event);
-  try {
-    const data = await $fetch("https://app.credipink.com/api/gift/gi/vo/auth", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${bearer}`
-      },
-      body: {
-        documento: query.document,
-        token: query.token
-      }
-    });
-    return { data };
-  } catch (error) {
-    return { data: error.data };
-  }
+  await $fetch("https://app.credipink.com/api/gift/gi/vo/auth", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${bearer}`
+    },
+    body: {
+      documento: query.document,
+      token: query.token
+    }
+  }).then((response) => {
+    if (response) {
+      return { data: response };
+    }
+  }).catch((err) => {
+    console.log(err);
+  });
 });
 
-const auth_post$1 = /*#__PURE__*/Object.freeze({
+const auth$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  default: auth_post
+  default: auth
 });
 
 const Vue3 = version.startsWith("3");

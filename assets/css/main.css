@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .bg-gradient-principal {
-    @apply bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-gray-100 via-fuchsia-600 to-orange-600
+    @apply bg-white
   }
