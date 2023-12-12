@@ -1,9 +1,9 @@
 export default defineEventHandler(async (event) => {
 
-    let bearer = event.context.adminBearer;
+    const bearer = event.context.adminBearer;
     const query = getQuery(event);
-    // Request User auth
-    await $fetch('https://app.credipink.com/api/gift/gi/vo/auth', {
+
+    const users = await $fetch('/api/users', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${bearer}`
@@ -12,13 +12,11 @@ export default defineEventHandler(async (event) => {
             documento: query.document,
             token: query.token
         }
-        }).then(response => {
-            if (response) {
-            return { data:  response}
-            }
-          }).catch((err) =>{ 
-                console.log(err)
-            })
+        }).catch((error) => {
+            return error.data
+        })
+
+    return users.data
   
   
   });

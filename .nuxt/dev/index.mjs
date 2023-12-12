@@ -672,19 +672,16 @@ const errorHandler = (async function errorhandler(error, event) {
 });
 
 const _OHXPzK = defineEventHandler(async (event) => {
-  await $fetch("https://app.credipink.com/api/v1/login", {
+  const response = await $fetch("https://app.credipink.com/api/v1/login", {
     method: "POST",
     body: {
       email: "analista.sistemas@lilipink.com",
       password: "1023911054"
     }
-  }).then((response) => {
-    if (response) {
-      event.context.adminBearer = response.access_token;
-    }
   }).catch((err) => {
     event.context.adminBearer = err;
   });
+  event.context.adminBearer = response.access_token;
 });
 
 const _lazy_ZzrutT = () => Promise.resolve().then(function () { return auth$1; });
@@ -879,9 +876,9 @@ const errorDev = /*#__PURE__*/Object.freeze({
 });
 
 const auth = defineEventHandler(async (event) => {
-  let bearer = event.context.adminBearer;
+  const bearer = event.context.adminBearer;
   const query = getQuery$1(event);
-  await $fetch("https://app.credipink.com/api/gift/gi/vo/auth", {
+  const users = await $fetch("/api/users", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${bearer}`
@@ -890,13 +887,10 @@ const auth = defineEventHandler(async (event) => {
       documento: query.document,
       token: query.token
     }
-  }).then((response) => {
-    if (response) {
-      return { data: response };
-    }
-  }).catch((err) => {
-    console.log(err);
+  }).catch((error) => {
+    return error.data;
   });
+  return users.data;
 });
 
 const auth$1 = /*#__PURE__*/Object.freeze({
