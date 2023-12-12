@@ -3,7 +3,7 @@ export default defineEventHandler(async (event) => {
     const bearer = event.context.adminBearer;
     const query = getQuery(event);
 
-    const users = await $fetch('/api/users', {
+    const response = await $fetch('https://app.credipink.com/api/gift/gi/vo/auth', {
         method: 'POST',
         headers: {
             'Authorization': `Bearer ${bearer}`
@@ -16,8 +16,7 @@ export default defineEventHandler(async (event) => {
             return error.data
         })
 
-    return users.data
-  
+    return {data: response }
   
   });
 

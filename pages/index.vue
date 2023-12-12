@@ -3,31 +3,21 @@ const document = ref('');
 const token = ref('');
 
 async function login() { 
+  const { pending, data, error, loading } = useFetch(`/api/auth?document=${document.value}&token=${token.value}`, {
+    lazy: true
+  })
 
-  const { data: response, error } = await useAsyncData('login', () => {
-      try {
-        return $fetch(`/api/auth?document=${document.value}&token=${token.value}`);
-      } catch (error) {
-        console.log('error');
-      }
-    });
-    
-    console.log(response.value);
-
-    if(toRaw(response.value.data.status === false)){
-      console.log('error')
+    if(toRaw(data.value.data.status)){    
+      localStorage.setItem("user_name", data.value.data.user_name);
+      localStorage.setItem("user_last_name", data.value.data.user_last_name);
+      localStorage.setItem("user_io", data.value.data.user_io);
+      localStorage.setItem("token", data.value.data.token);
+      localStorage.setItem("status", data.value.data.status);
+      localStorage.setItem("session_io", data.value.data.session_io);
+      await navigateTo('/user');
     }
 
-    if(toRaw(response.value.data.status)){    
-      localStorage.setItem("user_name", response.value.data.user_name);
-      localStorage.setItem("user_last_name", response.value.data.user_last_name);
-      localStorage.setItem("user_io", response.value.data.user_io);
-      localStorage.setItem("token", response.value.data.token);
-      localStorage.setItem("status", response.value.data.status);
-      localStorage.setItem("session_io", response.value.data.session_io);
-    }
 }
-
 </script>
 
 <template>

@@ -878,7 +878,7 @@ const errorDev = /*#__PURE__*/Object.freeze({
 const auth = defineEventHandler(async (event) => {
   const bearer = event.context.adminBearer;
   const query = getQuery$1(event);
-  const users = await $fetch("/api/users", {
+  const response = await $fetch("https://app.credipink.com/api/gift/gi/vo/auth", {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${bearer}`
@@ -890,7 +890,7 @@ const auth = defineEventHandler(async (event) => {
   }).catch((error) => {
     return error.data;
   });
-  return users.data;
+  return { data: response };
 });
 
 const auth$1 = /*#__PURE__*/Object.freeze({
