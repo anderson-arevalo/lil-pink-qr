@@ -25,10 +25,14 @@ definePageMeta({
           </header>
 
           <div class="card-details flex justify-between items-end">
-            <div class=" flex flex-col">
-              <h6 class="text-xs">Card Number</h6>
-              <h5 class="">4063 2020 3070 5000</h5>
-              <h5 class="">Piyush Patel</h5>
+            <div class=" flex flex-col gap-4">
+              <div class=" flex flex-col">
+                <h6 class="text-xs">Card Number</h6>
+                <h5 class="">4063 2020 3070 5000</h5>
+              </div>
+
+                <h5 class="">Piyush Patel</h5>
+
             </div>
 
             <div class="valid-date">
