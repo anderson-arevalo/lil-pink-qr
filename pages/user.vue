@@ -12,42 +12,35 @@ definePageMeta({
 </script>
 
 <template>
-<section>
-      <div class="container">
-        <div class="card front-face">
-          <header>
-            <span class="logo">
-              <img src="/logos/lilipink_yoi_logo_sm.png" alt="" />
-              <h5>Gift Card</h5>
+
+<section class="relative w-screen h-screen bg-[#14171e] flex justify-center items-center text-white" style="perspective: 1000px;">
+      <div class="container relative w-96 h-60 z-50" style="transition: 0.6s; transform-style: preserve-3d;">
+        <div class="card absolute w-full h-full front-face flex flex-col justify-between">
+          <header class="flex items-center justify-between">
+            <span class="flex flex-col items-start gap-1">
+              <img src="/logos/logo_lili_ink_yoi_blanco.png" class="w-40" alt="" />
+              <h5 class="font-normal text-lg">Gift Card</h5>
             </span>
-            <img src="/logos/chip.gif" alt=""  class="w-full h-full" />
+            <img src="/logos/chip.gif" alt="" class="w-12" />
           </header>
 
-          <div class="card-details">
-            <div class="name-number">
-              <h6>Card Number</h6>
-              <h5 class="number">4063 2020 3070 5000</h5>
-              <h5 class="name">Piyush Patel</h5>
+          <div class="card-details flex justify-between items-end">
+            <div class=" flex flex-col">
+              <h6 class="text-xs">Card Number</h6>
+              <h5 class="">4063 2020 3070 5000</h5>
+              <h5 class="">Piyush Patel</h5>
             </div>
 
             <div class="valid-date">
-              <h6>Valid Thru</h6>
+              <h6 class="text-xs">Valid Thru</h6>
               <h5>08/27</h5>
             </div>
           </div>
         </div>
 
-        <div class="card back-face">
-          <h6>
-            Code is in Description and Free to Use
-          </h6>
-          <span class="magnetic-strip"></span>
-          <div class="signature"><i>005</i></div>
-          <h5>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-            maiores sed doloremque nesciunt neque beatae voluptatibus doloribus.
-            Code is in Description and Free to Use
-          </h5>
+        <div class="card back-face w-96 h-60 flex flex-col justify-between">
+
+         
         </div>
       </div>
     </section>
@@ -61,50 +54,11 @@ definePageMeta({
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-section {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  background: #14171e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  perspective: 1000px;
-}
-section::before {
-  content: "";
-  position: absolute;
-  height: 240px;
-  width: 240px;
-  border-radius: 50%;
-  transform: translate(-150px, -100px);
-  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
-}
-section::after {
-  content: "";
-  position: absolute;
-  height: 240px;
-  width: 240px;
-  border-radius: 50%;
-  transform: translate(150px, 100px);
-  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
-}
-.container {
-  position: relative;
-  height: 225px;
-  width: 375px;
-  z-index: 100;
-  transition: 0.6s;
-  transform-style: preserve-3d;
-}
+
 .container:hover {
   transform: rotateY(180deg);
 }
-.container .card {
-  position: absolute;
-  height: 100%;
-  width: 100%;
+.card {
   padding: 25px;
   border-radius: 25px;
   backdrop-filter: blur(25px);
@@ -113,59 +67,21 @@ section::after {
   border: 1px solid rgba(255, 255, 255, 0.1);
   backface-visibility: hidden;
 }
-.front-face header,
-.front-face .logo {
-  display: flex;
-  align-items: center;
-}
-.front-face header {
-  justify-content: space-between;
-}
-.front-face .logo img {
-  width: 48px;
-  margin-right: 10px;
-}
-h5 {
-  font-size: 16px;
-  font-weight: 400;
-}
-.front-face {
-  width: 50px;
-}
-.front-face .card-details {
-  display: flex;
-  margin-top: 40px;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-h6 {
-  font-size: 10px;
-  font-weight: 400;
-}
-h5.number {
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-h5.name {
-  margin-top: 20px;
-}
-.card.back-face {
+
+.back-face {
   border: none;
   padding: 15px 25px 25px 25px;
   transform: rotateY(180deg);
 }
-.card.back-face h6 {
-  font-size: 8px;
-}
-.card.back-face .magnetic-strip {
-  position: absolute;
-  top: 40px;
+
+.magnetic-strip {
   left: 0;
   height: 45px;
   width: 100%;
   background: #000;
 }
-.card.back-face .signature {
+
+.signature {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -189,9 +105,10 @@ h5.name {
   margin-right: -30px;
   z-index: -1;
 }
-.card.back-face h5 {
-  font-size: 8px;
-  margin-top: 15px;
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
+
 }
 
 </style>
