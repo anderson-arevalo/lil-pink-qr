@@ -12,13 +12,186 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="flex flex-col justify-start items-center text-center gap-4 sm:gap-4 sm:pb-28 w-screen sm:w-2/3 lg:w-1/2 lg:w-2/3 h-screen ">
-    <UserQrTheImageBanner/>
-      <div class="flex flex-col items-center gap-1 sm:gap-2">
-        <p class=" text-black font-bold text-3xl sm:text-3xl md:text-4xl lg:text-5xl" >{{store.userData.user_name}}</p>
-        <p class=" text-gray-500 font-normal  text-xl md:text-2xl lg:text-3xl">Saldo: ${{store.userData.balance}} COP</p>
-        <LoginFormTheImageBussiness />
+<section>
+      <div class="container">
+        <div class="card front-face">
+          <header>
+            <span class="logo">
+              <img src="/logos/lilipink_yoi_logo_sm.png" alt="" />
+              <h5>Gift Card</h5>
+            </span>
+            <img src="/logos/chip.gif" alt=""  class="w-full h-full" />
+          </header>
+
+          <div class="card-details">
+            <div class="name-number">
+              <h6>Card Number</h6>
+              <h5 class="number">4063 2020 3070 5000</h5>
+              <h5 class="name">Piyush Patel</h5>
+            </div>
+
+            <div class="valid-date">
+              <h6>Valid Thru</h6>
+              <h5>08/27</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="card back-face">
+          <h6>
+            Code is in Description and Free to Use
+          </h6>
+          <span class="magnetic-strip"></span>
+          <div class="signature"><i>005</i></div>
+          <h5>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
+            maiores sed doloremque nesciunt neque beatae voluptatibus doloribus.
+            Code is in Description and Free to Use
+          </h5>
+        </div>
       </div>
-      <UserQrTheImageQr />
-  </div>
+    </section>
 </template>
+
+<style scoped>
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: #14171e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  perspective: 1000px;
+}
+section::before {
+  content: "";
+  position: absolute;
+  height: 240px;
+  width: 240px;
+  border-radius: 50%;
+  transform: translate(-150px, -100px);
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+}
+section::after {
+  content: "";
+  position: absolute;
+  height: 240px;
+  width: 240px;
+  border-radius: 50%;
+  transform: translate(150px, 100px);
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+}
+.container {
+  position: relative;
+  height: 225px;
+  width: 375px;
+  z-index: 100;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+.container:hover {
+  transform: rotateY(180deg);
+}
+.container .card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backface-visibility: hidden;
+}
+.front-face header,
+.front-face .logo {
+  display: flex;
+  align-items: center;
+}
+.front-face header {
+  justify-content: space-between;
+}
+.front-face .logo img {
+  width: 48px;
+  margin-right: 10px;
+}
+h5 {
+  font-size: 16px;
+  font-weight: 400;
+}
+.front-face {
+  width: 50px;
+}
+.front-face .card-details {
+  display: flex;
+  margin-top: 40px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+h6 {
+  font-size: 10px;
+  font-weight: 400;
+}
+h5.number {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+h5.name {
+  margin-top: 20px;
+}
+.card.back-face {
+  border: none;
+  padding: 15px 25px 25px 25px;
+  transform: rotateY(180deg);
+}
+.card.back-face h6 {
+  font-size: 8px;
+}
+.card.back-face .magnetic-strip {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  height: 45px;
+  width: 100%;
+  background: #000;
+}
+.card.back-face .signature {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 80px;
+  height: 40px;
+  width: 85%;
+  border-radius: 6px;
+  background: repeating-linear-gradient(
+    #fff,
+    #fff 3px,
+    #efefef 0px,
+    #efefef 9px
+  );
+}
+.signature i {
+  color: #000;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-right: -30px;
+  z-index: -1;
+}
+.card.back-face h5 {
+  font-size: 8px;
+  margin-top: 15px;
+}
+
+</style>
