@@ -1,23 +1,18 @@
-import { DateTime } from "luxon";
-
 export const useTimer = () => {
 
-    const seconds = ref(180);
-    const now = DateTime.now().toSeconds();
+    const seconds = ref(300);
 
-    const timer = () => {
+    const timer = async () => {
         seconds.value--;
-
-        console.log("faltan", seconds.value, "segundos")
-        console.log("fecha", now )
         if (seconds.value === 0) {
-          // Acción a realizar cuando el temporizador finaliza
+          await navigateTo('/');
         }
       };
       
       setInterval(timer, 1000);
 
     return {
-        timer
+        timer,
+        seconds
     }
   }
