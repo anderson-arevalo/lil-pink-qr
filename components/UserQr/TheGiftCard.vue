@@ -34,10 +34,7 @@
             </div>
           </div>
 
-          <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex items-center gap-4 justify-center text-white bg-zinc-100">
-          <div class="w-1/2">
-            <UserQrTheImageQr />
-          </div>
+          <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex justify-start items-center gap-4 text-white bg-zinc-100">
           <div class="w-1/2">
             <UserQrTheImageQr />
           </div>
