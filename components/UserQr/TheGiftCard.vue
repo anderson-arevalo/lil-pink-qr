@@ -3,9 +3,8 @@
 </script>
 
 <template>
-  <section style="">
-        <div class="absolute blur-3xl w-96 right-0 h-96 opacity-80 bg-[#E53A88] rounded-full"></div>
-        <div class="absolute blur-3xl opacity-60 right-0 w-96 h-96 bg-[#00A49A] rounded-full"></div>
+  <section>
+       <CommonTheBackGroundBlur />
         <div class="container relative w-80 h-56 sm:w-96 sm:h-60" style="transition: 0.6s; transform-style: preserve-3d;">
           <div class="card absolute w-full h-full front-face flex flex-col justify-between">
             <header class="flex items-center justify-between">
@@ -34,7 +33,7 @@
             </div>
           </div>
 
-          <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex justify-start items-center gap-4 text-white bg-zinc-100">
+          <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex justify-start items-center gap-4  bg-zinc-100">
           <div class="w-1/2">
             <UserQrTheImageQr />
           </div>

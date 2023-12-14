@@ -3,7 +3,7 @@
 
     <header class="bg-white z-10" >
       <div class="flex flex-col justify-between gap-4 mx-auto py-2 px-4 lg:px-[750px]">
-        <HeaderTheHeader />
+        <HeaderTheHeader/>
       </div>
     </header>
 

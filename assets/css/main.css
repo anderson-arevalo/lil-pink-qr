@@ -3,7 +3,11 @@
 @tailwind utilities;
 
   .principal-colors-fonts {
-    @apply text-slate-50
+    @apply text-zinc-900
+  }
+
+  .principal-colors-fonts {
+    @apply text-zinc-900
   }
 
  

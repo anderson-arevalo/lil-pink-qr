@@ -22,8 +22,8 @@ async function login() {
 </script>
 
 <template>
-  <div class="flex flex-col-reverse md:flex-row px-4 mx-auto w-screen h-screen max-w-7xl sm:px-6 gap-12 justify-center items-center font-montserrat">
-
+  <CommonTheBackGroundBlur />
+  <div class="relative flex flex-col-reverse md:flex-row px-4 mx-auto w-screen h-screen max-w-7xl sm:px-6 gap-12 justify-center items-center font-montserrat">
     <div class="flex flex-col sm:w-1/2 lg:w-2/3 rounded-lg sm:h-96 items-center text-center sm:text-left sm:items-start justify-center">
       <div class="flex flex-col gap-1 sm:gap-2">
         <blockquote class="text-xl lg:text-xl font-normal italic py-2 ">
