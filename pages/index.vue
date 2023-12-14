@@ -34,7 +34,7 @@ async function login() {
       </div>
     </div>
 
-    <div class="flex flex-col w-80 gap-6 py-8 px-6 bg-slate-50 rounded-lg">
+    <div class="flex flex-col w-80 gap-6 py-8 px-6  rounded-lg card">
       <div class="flex flex-col gap-4">
         <LoginFormTheImageBussiness />
         <div class="flex flex-col gap-0">
@@ -59,5 +59,14 @@ async function login() {
 
 
 <style scoped>
+
+.card {
+  border-radius: 25px;
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backface-visibility: hidden;
+}
 
 </style>
