@@ -2,12 +2,11 @@
 const document = ref('');
 const token = ref('');
 
-async function login() { 
-  
-  const { pending, data, error, loading } = useFetch(`/api/auth?document=${document.value}&token=${token.value}`, {
+async function login(documento, contraseña) { 
+
+  const { pending, data, error, loading } = await useFetch(`/api/auth?document=${documento}&token=${contraseña}`, {
     lazy: true
   })
-
     if(toRaw(data.value.data.status)){    
       localStorage.setItem("user_name", data.value.data.user_name);
       localStorage.setItem("user_last_name", data.value.data.user_last_name);
@@ -47,7 +46,7 @@ async function login() {
         <input type="text" v-model="document" class="border rounded-lg text-pink-500" />
         <input type="password" v-model=token class="border rounded-lg text-pink-500" />
         <button
-            @click="login()"
+            @click="login(document, token)"
             class="inline-block rounded-lg bg-zinc-900 px-5 py-2 text-center text-sm font-semibold text-slate-50 sm:w-auto"
             href=""
           >
