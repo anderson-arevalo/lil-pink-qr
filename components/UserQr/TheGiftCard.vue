@@ -34,7 +34,7 @@
             </div>
           </div>
 
-          <div class="card back-face w-80 h-56 sm:w-96 sm:h-60 flex items-center gap-4 justify-center text-white">
+          <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex items-center gap-4 justify-center text-white bg-zinc-100">
           <div class="w-1/2">
             <UserQrTheImageQr />
           </div>
@@ -63,6 +63,15 @@
   border-radius: 25px;
   backdrop-filter: blur(25px);
   background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backface-visibility: hidden;
+}
+
+.card-back {
+  padding: 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(25px);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backface-visibility: hidden;
