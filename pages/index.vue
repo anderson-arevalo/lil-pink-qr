@@ -22,7 +22,8 @@ async function login() {
 </script>
 
 <template>
-  <CommonTheBackGroundBlur />
+  <div class="absolute blur-3xl top-0 left-0 w-[45rem] h-[45rem] opacity-80 bg-[#E53A88] rounded-full"></div>
+  <div class="absolute blur-3xl opacity-60 bottom-0 right-0 w-[45rem] h-[45rem] bg-[#00A49A] rounded-full"></div>
   <div class="relative flex flex-col-reverse md:flex-row px-4 mx-auto w-screen h-screen max-w-7xl sm:px-6 gap-12 justify-center items-center font-montserrat">
     <div class="flex flex-col sm:w-1/2 lg:w-2/3 rounded-lg sm:h-96 items-center text-center sm:text-left sm:items-start justify-center">
       <div class="flex flex-col gap-1 sm:gap-2">
