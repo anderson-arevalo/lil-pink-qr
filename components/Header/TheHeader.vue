@@ -7,7 +7,7 @@
         flex
         justify-between
         mx-auto
-        gap-2
+        gap-20
       "
     >
       <div
@@ -22,7 +22,7 @@
       >
         <div class="cursor-pointer">
           <NuxtLink :to="{ path: `/` }">
-            <LoginFormTheImageBussiness class="w-40" />
+            <LoginFormTheImageBussiness class="w-28 lg:w-30" />
           </NuxtLink>
         </div>
       </div>
@@ -39,7 +39,7 @@
             "
           >
             <NuxtLink :to="{ path: '/' }"
-              class="flex justify-center rounded-lg text-sm font-semibold py-2 px-4 bg-slate-50 text-zinc-900 hover:bg-slate-700 cursor-pointer"
+              class="flex justify-center rounded-lg text-sm font-semibold py-2 px-4 bg-slate-50 text-zinc-900 cursor-pointer"
             >
               <span>Cerrar Sesion</span>
             </NuxtLink>

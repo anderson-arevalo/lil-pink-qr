@@ -3,6 +3,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     'HeaderTheHeader': typeof import("../components/Header/TheHeader.vue")['default']
     'LoginFormTheImageBussiness': typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
+    'UserQrTheGiftCard': typeof import("../components/UserQr/TheGiftCard.vue")['default']
     'UserQrTheImageBanner': typeof import("../components/UserQr/TheImageBanner.vue")['default']
     'UserQrTheImageQr': typeof import("../components/UserQr/TheImageQr.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
@@ -27,6 +28,7 @@ declare module 'vue' {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyHeaderTheHeader': typeof import("../components/Header/TheHeader.vue")['default']
     'LazyLoginFormTheImageBussiness': typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
+    'LazyUserQrTheGiftCard': typeof import("../components/UserQr/TheGiftCard.vue")['default']
     'LazyUserQrTheImageBanner': typeof import("../components/UserQr/TheImageBanner.vue")['default']
     'LazyUserQrTheImageQr': typeof import("../components/UserQr/TheImageQr.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
@@ -54,6 +56,7 @@ declare module 'vue' {
 
 export const HeaderTheHeader: typeof import("../components/Header/TheHeader.vue")['default']
 export const LoginFormTheImageBussiness: typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
+export const UserQrTheGiftCard: typeof import("../components/UserQr/TheGiftCard.vue")['default']
 export const UserQrTheImageBanner: typeof import("../components/UserQr/TheImageBanner.vue")['default']
 export const UserQrTheImageQr: typeof import("../components/UserQr/TheImageQr.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
@@ -78,6 +81,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyHeaderTheHeader: typeof import("../components/Header/TheHeader.vue")['default']
 export const LazyLoginFormTheImageBussiness: typeof import("../components/LoginForm/TheImageBussiness.vue")['default']
+export const LazyUserQrTheGiftCard: typeof import("../components/UserQr/TheGiftCard.vue")['default']
 export const LazyUserQrTheImageBanner: typeof import("../components/UserQr/TheImageBanner.vue")['default']
 export const LazyUserQrTheImageQr: typeof import("../components/UserQr/TheImageQr.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']

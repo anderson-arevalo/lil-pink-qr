@@ -9,6 +9,27 @@ module.exports = {
     "./error.vue",
   ],
   theme: {
+    extends: {
+      animation:{
+        blob: "blob 2s infinite"
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "scale(1)"
+          },
+          "33%": {
+            transform: "scale(1.5)"
+          },
+          "66%": {
+            transform: "scale(0.9)"
+          },
+          "100%": {
+            transform: "scale(1)"
+          },
+        }
+      }
+    },
     fontFamily: {
       'montserrat': ['Montserrat'],
       'roboto': ['Roboto'],
