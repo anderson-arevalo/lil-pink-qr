@@ -6,6 +6,8 @@ import { useUserStore } from '@/stores/user'
 
 // access the `store` variable anywhere in the component ✨
 const store = useUserStore()
+const { timer } = useTimer()
+// timer();
 
 definePageMeta({
   layout: 'user'
@@ -14,7 +16,6 @@ definePageMeta({
 </script>
 
 <template>
-
     <section class=" w-auto h-fit flex flex-col justify-between items-center pt-6 text-white relative">
           
           <div class="w-full h-full flex flex-col gap-12">
