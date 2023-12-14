@@ -13,8 +13,10 @@ definePageMeta({
 
 <template>
 
-<section class="relative w-screen h-screen bg-[#14171e] flex justify-center items-center text-white" style="perspective: 1000px;">
-      <div class="container relative w-96 h-60 z-50" style="transition: 0.6s; transform-style: preserve-3d;">
+<section class=" w-auto h-screen flex justify-center items-start text-white !mt-4" style="perspective: 1000px;">
+      <div class="absolute blur-2xl -top-20 right-1 sm:right-60  w-96 h-96  bg-[#E53A88] rounded-full"></div>
+      <div class="absolute blur-2xl top-9 right-1 sm:left-60 w-96 h-96  bg-[#00A49A] rounded-full"></div>
+      <div class="container relative w-80 h-56 sm:w-96 sm:h-60" style="transition: 0.6s; transform-style: preserve-3d;">
         <div class="card absolute w-full h-full front-face flex flex-col justify-between">
           <header class="flex items-center justify-between">
             <span class="flex flex-col items-start gap-1">
@@ -42,9 +44,13 @@ definePageMeta({
           </div>
         </div>
 
-        <div class="card back-face w-96 h-60 flex flex-col justify-between">
-
-         
+        <div class="card back-face w-80 h-56 sm:w-96 sm:h-60 flex items-center gap-4 justify-center text-white">
+        <div class="w-1/2">
+          <UserQrTheImageQr />
+        </div>
+        <div class="w-1/2">
+          <UserQrTheImageQr />
+        </div>
         </div>
       </div>
     </section>

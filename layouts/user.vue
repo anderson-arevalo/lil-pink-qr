@@ -1,9 +1,12 @@
 <template>
-<div class="pb-4">
+<div class="pb-4 m-auto gap-4 flex flex-col justify-center relative">
+    <header class="flex flex-col gap-4 mx-auto py-4 px-4 2xl:px-[30rem]" >
+      <HeaderTheHeader />
+    </header>
 
   <NuxtLoadingIndicator />
 
-  <div class=" bg-zinc-900  flex pb-2 md:px-32 justify-center">
+  <div class="relative">
     <slot />
   </div>
 
