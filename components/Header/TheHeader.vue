@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <nav class="z-20 top-0 border-b pb-4">
+  <nav class="top-0 w-full">
     <div
       class="
         flex
