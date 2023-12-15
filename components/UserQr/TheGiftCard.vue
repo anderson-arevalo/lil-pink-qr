@@ -1,7 +1,12 @@
 <script setup>
 
-import VueQrcode from 'vue-qrcode'
-const url = ref("https://warocol.com/");
+import VueQrcode from "@chenfengyuan/vue-qrcode"
+
+const props = defineProps({ 
+    idCegid: {type: String},
+    });
+  
+const { idCegid } = toRefs(props);
 
 </script>
 
@@ -37,18 +42,16 @@ const url = ref("https://warocol.com/");
           </div>
 
           <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex justify-start items-center gap-4  bg-zinc-100">
-          <div class="w-1/2">
-            holanda
-              <qrcode
-              :value="url"
+          <div class="flex justify-center ">
+              <vue-qrcode
+              :value="idCegid"
               :options="{
-              color: {
-                  dark: '#000000',
-                  light: '#e0a1c2',
-              },
-              width: 200,
+                color: {
+                  dark: '#18181B',
+                  light: '#F4F4F5',
+                },
               }"
-          ></qrcode>
+            ></vue-qrcode>
           </div>
           </div>
         </div>

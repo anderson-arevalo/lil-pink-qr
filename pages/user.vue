@@ -3,20 +3,35 @@
 import { ExclamationCircleIcon } from '@heroicons/vue/24/outline'
 import { BanknotesIcon } from '@heroicons/vue/24/outline'
 import { useUserStore } from '@/stores/user'
-
 import { DateTime } from "luxon"
 
 // access the `store` variable anywhere in the component ✨
 const store = useUserStore();
-const { timer, seconds } = useTimer();
-
-const stored_session = ref();
-const now = ref(DateTime.now());
-
-
+const { timer, seconds, setTimer } = useTimer();
 
 definePageMeta({
   layout: 'user'
+})
+
+onMounted( async () => {
+
+  if(process.client){
+    // Ejecuta solo en el cliente
+    const now = DateTime.now(); // TimeStarp ahora
+    const old_session = localStorage.getItem("session"); // Recuperar TimeStamp Session stored
+
+    if( !old_session  ||  now > DateTime.fromISO(old_session ) ){
+      localStorage.setItem("session", now.plus({ minutes: 5 }));
+      await setTimer(300000);
+    }else{
+      const minutesDiff = DateTime.fromISO(old_session).diff(now, "minutes");
+      console.log(minutesDiff.toMillis());
+      await setTimer(minutesDiff.toMillis());
+    }
+
+
+
+  } 
 })
 
 
@@ -25,7 +40,9 @@ definePageMeta({
 <template>
     <section class=" w-auto h-fit flex flex-col justify-between items-center pt-1 text-white relative">   
           <div class="w-full h-full flex flex-col gap-4">
-            <UserQrTheGiftCard/>
+            <UserQrTheGiftCard
+            idCegid="https://empastesyarchivos.com/"
+            ></UserQrTheGiftCard>
                 <div class="bg-white z-10 w-auto h-fit flex flex-col justify-between gap-4 rounded-t-xl p-4">
                   <div class="flex flex-col gap-2">
                     <p class="font-light text-zinc-900"> Cuentas</p>
