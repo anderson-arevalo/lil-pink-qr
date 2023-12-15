@@ -1,5 +1,8 @@
 <script setup>
 
+import VueQrcode from 'vue-qrcode'
+const url = ref("https://warocol.com/");
+
 </script>
 
 <template>
@@ -35,7 +38,17 @@
 
           <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex justify-start items-center gap-4  bg-zinc-100">
           <div class="w-1/2">
-            <UserQrTheImageQr />
+            holanda
+              <qrcode
+              :value="url"
+              :options="{
+              color: {
+                  dark: '#000000',
+                  light: '#e0a1c2',
+              },
+              width: 200,
+              }"
+          ></qrcode>
           </div>
           </div>
         </div>

@@ -679,8 +679,12 @@ const _OHXPzK = defineEventHandler(async (event) => {
       password: "1023911054"
     }
   }).catch((err) => {
+    console.log(err.data);
     event.context.adminBearer = err;
   });
+  if (response === void 0) {
+    throw new TypeError("Api Not Working");
+  }
   event.context.adminBearer = response.access_token;
 });
 

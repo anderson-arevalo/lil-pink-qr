@@ -7,21 +7,18 @@ import { useUserStore } from '@/stores/user'
 import { DateTime } from "luxon"
 
 // access the `store` variable anywhere in the component ✨
-const store = useUserStore()
-const { timer, seconds } = useTimer()
+const store = useUserStore();
+const { timer, seconds } = useTimer();
 
-const now = DateTime.now();
-const future = now.plus({ minutes: 5 });
+const stored_session = ref();
+const now = ref(DateTime.now());
 
-console.log("Ahora", now);
-console.log("Futuro", future);
 
-console.log("Ahora", now.toISO());
-console.log("Futuro", future.toISO());
 
 definePageMeta({
   layout: 'user'
 })
+
 
 </script>
 

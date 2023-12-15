@@ -1,12 +1,15 @@
 <script setup>
-const document = ref('');
-const token = ref('');
+const document = ref();
+const token = ref();
+const error_api = ref();
+const fetchError = ref();
 
 async function login(documento, contraseña) { 
+    
+  const { data, pending, error, refresh } = await useAsyncData(
+        'session_user',
+        () => $fetch(`/api/auth?document=${documento}&token=${contraseña}`))
 
-  const { pending, data, error, loading } = await useFetch(`/api/auth?document=${documento}&token=${contraseña}`, {
-    lazy: true
-  })
     if(toRaw(data.value.data.status)){    
       localStorage.setItem("user_name", data.value.data.user_name);
       localStorage.setItem("user_last_name", data.value.data.user_last_name);
@@ -15,7 +18,10 @@ async function login(documento, contraseña) {
       localStorage.setItem("status", data.value.data.status);
       localStorage.setItem("session_io", data.value.data.session_io);
       await navigateTo('/user');
+    }else{
+      console.log("error")
     }
+
 
 }
 </script>

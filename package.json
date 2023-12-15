@@ -23,7 +23,8 @@
     "@heroicons/vue": "^2.0.18",
     "@pinia/nuxt": "^0.5.1",
     "luxon": "^3.4.4",
-    "pinia": "^2.1.7"
+    "pinia": "^2.1.7",
+    "vue-qrcode": "^2.2.0"
   },
   "overrides": {
     "vue": "latest"
