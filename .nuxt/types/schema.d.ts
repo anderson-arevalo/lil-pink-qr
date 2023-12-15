@@ -16,15 +16,9 @@ declare module 'nuxt/schema' {
       cdnURL: string,
    },
 
-   private: {
-      gtmContainerId: string,
+   userAdmin: string,
 
-      supabaseUrl: string,
-
-      supabaseAnonKey: string,
-
-      siteUrl: string,
-   },
+   userPassword: string,
   }
   interface PublicRuntimeConfig {
 

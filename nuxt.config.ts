@@ -1,12 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   runtimeConfig: {
-    private: {
-      gtmContainerId: '',
-      supabaseUrl: '',
-      supabaseAnonKey: '',
-      siteUrl: ''
-    },
+  
+    userAdmin: process.env.USER_ADMIN,
+    userPassword: process.env.USER_PASSWORD
   },
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],

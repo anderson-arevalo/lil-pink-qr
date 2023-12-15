@@ -61,12 +61,8 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {},
-  "private": {
-    "gtmContainerId": "",
-    "supabaseUrl": "",
-    "supabaseAnonKey": "",
-    "siteUrl": ""
-  }
+  "userAdmin": "analista.sistemas@lilipink.com",
+  "userPassword": "1023911054"
 };
 const ENV_PREFIX = "NITRO_";
 const ENV_PREFIX_ALT = _inlineRuntimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_";
@@ -672,11 +668,13 @@ const errorHandler = (async function errorhandler(error, event) {
 });
 
 const _OHXPzK = defineEventHandler(async (event) => {
+  const user = useRuntimeConfig().userAdmin;
+  const pass = useRuntimeConfig().userPassword;
   const response = await $fetch("https://app.credipink.com/api/v1/login", {
     method: "POST",
     body: {
-      email: "analista.sistemas@lilipink.com",
-      password: "1023911054"
+      email: user,
+      password: pass
     }
   }).catch((err) => {
     console.log(err.data);
