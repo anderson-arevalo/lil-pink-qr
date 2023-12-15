@@ -1,6 +1,6 @@
 export const useTimer = () => {
 
-    const seconds = ref(10);
+    const seconds = ref(300);
 
     const timer = async () => {
         seconds.value--;

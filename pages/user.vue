@@ -26,10 +26,10 @@ definePageMeta({
 </script>
 
 <template>
-    <section class=" w-auto h-fit flex flex-col justify-between items-center pt-6 text-white relative">   
-          <div class="w-full h-full flex flex-col gap-12">
+    <section class=" w-auto h-fit flex flex-col justify-between items-center pt-1 text-white relative">   
+          <div class="w-full h-full flex flex-col gap-4">
             <UserQrTheGiftCard/>
-                <div class="bg-white z-10 w-auto h-80 flex flex-col justify-between gap-4 rounded-t-xl p-4">
+                <div class="bg-white z-10 w-auto h-fit flex flex-col justify-between gap-4 rounded-t-xl p-4">
                   <div class="flex flex-col gap-2">
                     <p class="font-light text-zinc-900"> Cuentas</p>
                     <div class="bg-zinc-100 w-full h-fit flex p-4 gap-2 justify-center rounded-xl">
