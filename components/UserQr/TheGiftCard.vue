@@ -41,7 +41,7 @@ const { idCegid } = toRefs(props);
             </div>
           </div>
 
-          <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex justify-start items-center gap-4  bg-zinc-100">
+          <div class="card-back back-face w-80 h-56 sm:w-96 sm:h-60 flex justify-center items-center gap-4  bg-zinc-100">
           <div class="flex justify-center ">
               <vue-qrcode
               :value="idCegid"
